@@ -259,7 +259,7 @@ section { padding: 0; }
 }
 
 /* v2: gray accents */
-:root { --gray: #D9D9D9; }
+:root { --gray: #F4F4F5; }
 .hero h1 { margin-top: 0; }
 .card .icon { background: var(--gray); }
 .steps li { background: var(--gray); }
