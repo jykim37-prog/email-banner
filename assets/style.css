@@ -179,17 +179,10 @@ section { padding: 0; }
   box-shadow: var(--shadow);
 }
 .form-card h2 {
-  margin: 0 0 4px;
+  margin: 0 0 8px;
   font-size: 22px;
   font-weight: 800;
   letter-spacing: -.02em;
-}
-.form-card .form-desc {
-  margin: 0 0 16px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--line);
-  font-size: 14px;
-  color: var(--sub);
 }
 .form-card iframe { display: block; width: 100%; border: 0; min-height: 600px; }
 .form-fallback {
