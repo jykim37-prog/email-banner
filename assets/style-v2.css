@@ -258,9 +258,9 @@ section { padding: 0; }
   .cross a { text-align: center; }
 }
 
-/* v2: gray accents */
-:root { --gray: #F4F4F5; }
+/* v2: all-white with thin borders */
+.hero { background: #fff; }
 .hero h1 { margin-top: 0; }
-.card .icon { background: var(--gray); }
-.steps li { background: var(--gray); }
-.form-section { background: var(--gray); }
+.card .icon { background: #fff; border: 1px solid var(--line); }
+.steps li { background: #fff; border: 1px solid var(--line); }
+.form-section { background: #fff; }
