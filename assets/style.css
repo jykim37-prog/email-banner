@@ -45,7 +45,7 @@ a { color: var(--brand); }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 84px;
+  height: 72px;
 }
 .site-header img { height: 30px; width: auto; display: block; }
 .header-link {
@@ -67,10 +67,10 @@ a { color: var(--brand); }
   color: var(--sub);
   text-align: right;
 }
-.contact strong { color: var(--text); font-size: 12px; font-weight: 700; }
-.contact a { color: var(--sub); text-decoration: none; font-weight: 600; }
+.contact a { display: inline-flex; align-items: center; gap: 4px; color: var(--sub); text-decoration: none; font-weight: 600; }
+.contact .ico { width: 13px; height: 13px; color: var(--brand); flex-shrink: 0; }
 .contact a:hover { color: var(--brand); text-decoration: underline; }
-.contact i { font-style: normal; margin: 0 6px; color: var(--muted); }
+.contact i { display: inline-block; width: 1px; height: 10px; margin: 0 10px; background: #C9D0DB; vertical-align: -1px; }
 
 /* Hero */
 .hero {
@@ -270,7 +270,6 @@ section { padding: 0; }
   .site-header .container { height: auto; flex-direction: column; align-items: flex-start; gap: 8px; padding-top: 12px; padding-bottom: 12px; }
   .site-header img { height: 22px; }
   .contact { align-items: flex-start; text-align: left; font-size: 11.5px; }
-  .contact strong { display: none; }
   .hero { padding: 20px 0 14px; }
   .hero h1 { font-size: 23px; }
   .hero p.lead { font-size: 14px; }
