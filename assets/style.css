@@ -67,7 +67,7 @@ a { color: var(--brand); }
   color: var(--sub);
   text-align: right;
 }
-.contact .item { display: inline-flex; align-items: center; gap: 4px; }
+.contact .item { display: inline-flex; align-items: center; gap: 7px; }
 .contact .sym { font-size: 1.2em; line-height: 1; font-weight: 400; color: var(--brand); }
 .contact i { display: inline-block; width: 1px; height: 10px; margin: 0 10px; background: #C9D0DB; vertical-align: -1px; }
 
