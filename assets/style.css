@@ -200,9 +200,15 @@ section { padding: 0; }
   text-align: center;
 }
 
-/* Tally 폼은 다른 도메인이라 내부 글자 크기를 직접 바꿀 수 없어 폼 전체를 축소 (데스크톱만) */
+/* Tally 폼은 다른 도메인이라 내부 글자 크기를 직접 바꿀 수 없어 폼을 통째로 축소 (데스크톱만).
+   축소 후 남는 아래 여백은 페이지 하단 스크립트가 .tally-wrap 높이를 맞춰 없앤다. */
+.tally-wrap { overflow: hidden; }
 @media (min-width: 721px) {
-  .form-card iframe { zoom: .85; }
+  .tally-wrap iframe {
+    width: calc(100% / .85) !important;
+    transform: scale(.85);
+    transform-origin: 0 0;
+  }
 }
 
 /* Cross link */
