@@ -218,21 +218,21 @@ section { padding: 0; }
   justify-content: space-between;
   gap: 16px;
   max-width: 720px;
-  margin: 24px auto 0;
-  padding: 20px 24px;
+  margin: 16px auto 0;
+  padding: 14px 20px;
   border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border-radius: 12px;
   background: #fff;
 }
-.cross p { margin: 0; font-size: 15px; color: var(--sub); }
-.cross p strong { display: block; color: var(--text); font-size: 16px; }
+.cross p { margin: 0; font-size: 13px; line-height: 1.5; color: var(--sub); }
+.cross p strong { display: block; margin-bottom: 2px; color: var(--text); font-size: 15px; letter-spacing: -.02em; }
 .cross a {
   flex-shrink: 0;
-  padding: 10px 18px;
+  padding: 8px 14px;
   border: 1px solid var(--brand);
-  border-radius: 10px;
+  border-radius: 8px;
   color: var(--brand);
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
