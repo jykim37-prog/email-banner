@@ -90,6 +90,14 @@ section { padding: 0; }
 .benefits-section { padding: 4px 0 12px; }
 .steps-section { padding: 0 0 24px; }
 
+.section-title {
+  margin: 0 0 10px;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -.02em;
+}
+.benefits-section .section-title { margin-top: 8px; }
+
 /* Benefit cards */
 .cards {
   display: grid;
@@ -240,6 +248,7 @@ section { padding: 0; }
   .cards, .steps { grid-template-columns: 1fr; gap: 8px; }
   .card { padding: 12px 14px; }
   .card p { display: none; }
+  .section-title { font-size: 15px; margin-bottom: 8px; }
   .card { grid-template-columns: 28px 1fr; }
   .card .icon { width: 28px; height: 28px; border-radius: 8px; grid-row: auto; }
   .card .icon svg { width: 16px; height: 16px; }
