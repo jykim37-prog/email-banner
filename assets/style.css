@@ -67,9 +67,8 @@ a { color: var(--brand); }
   color: var(--sub);
   text-align: right;
 }
-.contact a { display: inline-flex; align-items: center; gap: 4px; color: var(--sub); text-decoration: none; font-weight: 600; }
-.contact .ico { width: 13px; height: 13px; color: var(--brand); flex-shrink: 0; }
-.contact a:hover { color: var(--brand); text-decoration: underline; }
+.contact .item { display: inline-flex; align-items: center; gap: 4px; }
+.contact .ico { width: 1em; height: 1em; color: var(--brand); flex-shrink: 0; }
 .contact i { display: inline-block; width: 1px; height: 10px; margin: 0 10px; background: #C9D0DB; vertical-align: -1px; }
 
 /* Hero */
