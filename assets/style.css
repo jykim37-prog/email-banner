@@ -200,6 +200,11 @@ section { padding: 0; }
   text-align: center;
 }
 
+/* Tally 폼은 다른 도메인이라 내부 글자 크기를 직접 바꿀 수 없어 폼 전체를 축소 (데스크톱만) */
+@media (min-width: 721px) {
+  .form-card iframe { zoom: .85; }
+}
+
 /* Cross link */
 .cross {
   display: flex;
