@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>전년도 증권 제출 | 관광공제회 호텔종합공제</title>
+<meta name="description" content="전년도 보험증권을 제출해주시면 복잡한 정보 입력 없이 간편하게 호텔종합공제 견적을 받아보실 수 있습니다.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="전년도 증권 제출 | 관광공제회 호텔종합공제">
+<meta property="og:description" content="전년도 증권만 올려주시면 간편하게 견적을 받아보실 수 있습니다. 전년 대비 공제료 최대 20% 인하.">
+<meta property="og:image" content="https://jykim37-prog.github.io/email-banner/images/banner_top.jpg">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  /* 자체 신청폼 (Tally 임베드 대체) */
+  .apply-form { margin-top: 12px; }
+  .apply-form .field { margin-bottom: 18px; }
+  .apply-form label, .apply-form .label { display: block; margin-bottom: 6px; font-size: 15px; font-weight: 700; letter-spacing: -.02em; }
+  .apply-form .req { color: #D93025; font-weight: 700; }
+  .apply-form input[type=text], .apply-form input[type=tel], .apply-form input[type=email] {
+    display: block; width: 100%; padding: 11px 14px;
+    border: 1px solid var(--line); border-radius: 10px; background: #fff;
+    font: inherit; font-size: 15px; color: var(--text);
+  }
+  .apply-form input::placeholder { color: var(--muted); }
+  .apply-form input:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px var(--brand-soft); }
+  .apply-form input.invalid { border-color: #D93025; }
+  .apply-form hr { margin: 24px 0; border: 0; border-top: 1px solid var(--line); }
+  .apply-form .help { margin: 0 0 10px; font-size: 13px; line-height: 1.6; color: var(--sub); }
+  .apply-form .drop {
+    position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    min-height: 110px; padding: 16px; margin: 0;
+    border: 1.5px dashed #C9D0DB; border-radius: 12px; background: var(--section);
+    font-size: 14px; font-weight: 500; color: var(--sub); text-align: center; cursor: pointer;
+  }
+  .apply-form .drop:hover, .apply-form .drop.over { border-color: var(--brand); background: var(--brand-soft); }
+  .apply-form .drop.invalid { border-color: #D93025; }
+  .apply-form .drop input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+  .apply-form .file-list { margin: 10px 0 0; padding: 0; list-style: none; }
+  .apply-form .file-list li { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; font-size: 14px; }
+  .apply-form .file-list li + li { margin-top: 6px; }
+  .apply-form .file-list .name { flex: 1; min-width: 0; font-weight: 600; word-break: break-all; }
+  .apply-form .file-list .size { flex-shrink: 0; font-size: 12px; color: var(--muted); }
+  .apply-form .file-list button { flex-shrink: 0; width: 24px; height: 24px; padding: 0; border: 0; border-radius: 50%; background: var(--section); color: var(--sub); font-size: 15px; line-height: 1; cursor: pointer; }
+  .apply-form .file-list button:hover { background: #FCE8E6; color: #D93025; }
+  .apply-form .file-list .total { justify-content: flex-end; border: 0; padding: 2px 4px 0; font-size: 12px; color: var(--muted); }
+  .apply-form .file-list .total.over { color: #D93025; font-weight: 700; }
+  .apply-form .privacy { padding: 14px 16px; border-radius: 10px; background: var(--section); font-size: 13px; line-height: 1.6; color: var(--sub); }
+  .apply-form .privacy p { margin: 0; }
+  .apply-form .privacy ul { margin: 8px 0; padding-left: 18px; }
+  .apply-form .privacy b { color: var(--text); }
+  .apply-form .privacy .note { font-size: 12px; color: var(--muted); }
+  .apply-form .check { display: flex; align-items: center; gap: 8px; margin: 12px 0 0; font-size: 14px; font-weight: 600; cursor: pointer; }
+  .apply-form .check input { width: 18px; height: 18px; margin: 0; accent-color: var(--brand); }
+  .apply-form .check.invalid { color: #D93025; }
+  .form-error { margin: 0 0 12px; font-size: 13px; color: #D93025; }
+  .submit-btn {
+    display: block; width: 100%; padding: 14px; border: 0; border-radius: 10px;
+    background: var(--brand); color: #fff; font: inherit; font-size: 16px; font-weight: 700; cursor: pointer;
+  }
+  .submit-btn:hover { background: var(--brand-dark); }
+  .submit-btn:disabled { opacity: .6; cursor: default; }
+  .form-done { padding: 40px 0 24px; text-align: center; }
+  .form-done p { margin: 0 0 8px; color: var(--sub); }
+  .form-done strong { font-size: 18px; color: var(--text); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <img src="assets/logo.png" alt="한국관광협회중앙회 관광공제회">
+    <address class="contact">
+      <span><span class="item"><b class="sym">☎︎</b>전화 02-757-7491</span><i aria-hidden="true"></i><span class="item"><b class="sym">✉︎</b>이메일 kta7491@naver.com</span></span>
+      <span class="item"><b class="sym">◷</b>운영시간 주중 09:00~18:00 (점심시간 12:00~13:00)</span>
+    </address>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="container">
+      <span class="badge">호텔종합공제 · 전년도 증권 제출</span>
+      <h1>전년도 보험증권을 제출하고, <em>더 나은 조건을 확인하세요</em></h1>
+      <p class="lead">현재 가입하신 보험조건을 바탕으로 관광공제회 견적을 안내해 드립니다.</p>
+    </div>
+  </div>
+
+  <section class="benefits-section">
+    <div class="container">
+      <h2 class="section-title">관광공제회와 비교해야 하는 이유</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
+          <h3>공제료 <strong>최대 20% 인하</strong></h3>
+          <p>관광공제회 가입 시 기존 대비 공제료를 최대 20%까지 절감할 수 있습니다.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></div>
+          <h3>전년도 보험증권만으로 간편하게</h3>
+          <p>복잡한 정보 입력 없이 기존 보험증권을 바탕으로 가입조건을 검토합니다.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <h3>갱신 전 보험조건 비교</h3>
+          <p>보험 갱신 전에 보험료와 보장조건을 비교해 보세요.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps-section">
+    <div class="container">
+      <h2 class="section-title">진행 절차</h2>
+      <ol class="steps">
+        <li><strong>보험증권 제출</strong><span>연락처와 전년도 보험증권을 제출해 주세요.</span></li>
+        <li><strong>가입내역 검토 및 상담</strong><span>담당자가 기존 보험 가입내역을 검토하고 상담을 진행합니다.</span></li>
+        <li><strong>견적 산출 및 안내</strong><span>검토 및 상담 내용을 바탕으로 견적을 산출하여 안내해 드립니다.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="form-section" id="apply">
+    <div class="container">
+      <div class="form-card">
+        <h2>전년도 증권 제출</h2>
+        <form id="apply-form" class="apply-form" novalidate>
+          <div class="field">
+            <label for="f-hotel">호텔명 <span class="req">*</span></label>
+            <input id="f-hotel" name="hotel" type="text" placeholder="호텔명을 입력해주세요." required>
+          </div>
+          <div class="field">
+            <label for="f-manager">담당자명</label>
+            <input id="f-manager" name="manager" type="text" placeholder="담당자명을 입력해주세요.">
+          </div>
+          <div class="field">
+            <label for="f-phone">전화번호 <span class="req">*</span></label>
+            <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="전화번호를 입력해주세요." required pattern="[0-9\-+\s()]{8,}">
+          </div>
+          <div class="field">
+            <label for="f-email">E-mail <span class="req">*</span></label>
+            <input id="f-email" name="email" type="email" autocomplete="email" placeholder="이메일 주소를 입력해주세요." required>
+          </div>
+
+          <hr>
+
+          <div class="field">
+            <label for="f-file">전년도 보험증권 <span class="req">*</span></label>
+            <p class="help">※ 파일은 <b>여러 개 첨부 가능</b>하며 <b>합계 최대 20MB까지</b> 올릴 수 있습니다. 20MB를 초과하는 경우에는 <b>관광공제회 이메일로 제출해 주시기 바랍니다.</b> <a href="mailto:kta7491@naver.com">kta7491@naver.com</a></p>
+            <label class="drop" for="f-file">
+              <input id="f-file" name="file" type="file" accept=".pdf,.jpg,.jpeg,.png,.heic,.hwp,.doc,.docx,.xls,.xlsx,.zip" multiple>
+              <span class="drop-text">클릭하거나 파일을 여기로 끌어다 놓으세요</span>
+            </label>
+            <ul class="file-list" hidden></ul>
+          </div>
+
+          <hr>
+
+          <div class="field">
+            <span class="label">개인정보 수집·이용 동의 <span class="req">[필수]</span></span>
+            <div class="privacy">
+              <p>호텔종합공제 견적 진행을 위해 아래와 같이 개인정보를 수집·이용합니다.</p>
+              <ul>
+                <li><b>개인정보 수집·이용 기관:</b> 한국관광협회중앙회 관광공제회, 엔씨알엠보험중개(주)</li>
+                <li><b>수집·이용 목적:</b> 상담 진행</li>
+                <li><b>수집 항목:</b> 사업장명, 담당부서, 담당자명, 연락처, 이메일 및 상담 과정에서 입력한 정보</li>
+                <li><b>보유·이용 기간:</b> 상담 종료 후 1년</li>
+              </ul>
+              <p class="note">※ 단, 관계 법령에 따라 보존할 필요가 있는 경우에는 해당 법령에서 정한 기간 동안 보관할 수 있습니다.<br>※ 귀하는 개인정보 수집·이용에 대한 동의를 거부할 권리가 있습니다. 다만, 필수정보 수집·이용에 동의하지 않을 경우 상담 및 사전진단 서비스 이용이 제한될 수 있습니다.</p>
+            </div>
+            <label class="check"><input name="agree" type="checkbox" required> 위 개인정보 수집·이용에 동의합니다. [필수]</label>
+          </div>
+
+          <p class="form-error" role="alert" hidden></p>
+          <button type="submit" class="submit-btn">제출하기</button>
+        </form>
+
+        <div class="form-done" hidden>
+          <p><strong>제출이 완료되었습니다.</strong></p>
+          <p>입력해주신 내용을 확인한 후 연락드리겠습니다.<br>감사합니다.</p>
+        </div>
+      </div>
+
+      <div class="cross">
+        <p><strong>증권이 지금 없거나 먼저 상담을 받고 싶으신가요?</strong>간단한 정보만 남겨주시면 담당자가 연락드립니다.</p>
+        <a href="consult.html">간편 상담 신청 →</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>한국관광협회중앙회 관광공제회 · 엔씨알엠보험중개(주)</p>
+  </div>
+</footer>
+
+<script>
+  // Google Apps Script 웹앱 배포 URL (apps-script/submit-form.gs 참고)
+  var ENDPOINT = "https://script.google.com/macros/s/AKfycbyvh6OkiAq3T-Q_718_daXn6WSvSqMPreDQcRuusUPHv0eOs9s1_x8M9dpkCSLQblA_Fg/exec";
+  var MAX_BYTES = 20 * 1024 * 1024;
+
+  var form = document.getElementById("apply-form");
+  var done = document.querySelector(".form-done");
+  var errBox = form.querySelector(".form-error");
+  var btn = form.querySelector(".submit-btn");
+  var fileInput = form.querySelector("#f-file");
+  var drop = form.querySelector(".drop");
+  var fileList = form.querySelector(".file-list");
+  var files = [];
+
+  function mb(n) { return (n / 1024 / 1024).toFixed(1) + "MB"; }
+  function totalBytes() { return files.reduce(function (sum, f) { return sum + f.size; }, 0); }
+
+  function renderFiles() {
+    fileList.innerHTML = "";
+    files.forEach(function (f, i) {
+      var li = document.createElement("li");
+      li.innerHTML = '<span class="name"></span><span class="size"></span><button type="button" aria-label="삭제">×</button>';
+      li.querySelector(".name").textContent = f.name;
+      li.querySelector(".size").textContent = mb(f.size);
+      li.querySelector("button").addEventListener("click", function () { files.splice(i, 1); renderFiles(); });
+      fileList.appendChild(li);
+    });
+    if (files.length) {
+      var t = document.createElement("li");
+      t.className = "total" + (totalBytes() > MAX_BYTES ? " over" : "");
+      t.textContent = "합계 " + mb(totalBytes()) + " / 20MB";
+      fileList.appendChild(t);
+    }
+    fileList.hidden = !files.length;
+    drop.classList.remove("invalid");
+  }
+
+  function addFiles(list) {
+    Array.prototype.forEach.call(list, function (f) {
+      var dup = files.some(function (g) { return g.name === f.name && g.size === f.size; });
+      if (!dup) files.push(f);
+    });
+    fileInput.value = "";
+    renderFiles();
+  }
+  fileInput.addEventListener("change", function () { addFiles(fileInput.files); });
+  ["dragenter", "dragover"].forEach(function (t) {
+    drop.addEventListener(t, function (e) { e.preventDefault(); drop.classList.add("over"); });
+  });
+  ["dragleave", "drop"].forEach(function (t) {
+    drop.addEventListener(t, function (e) { e.preventDefault(); drop.classList.remove("over"); });
+  });
+  drop.addEventListener("drop", function (e) {
+    if (e.dataTransfer.files.length) addFiles(e.dataTransfer.files);
+  });
+
+  function fail(msg, el) {
+    errBox.textContent = msg;
+    errBox.hidden = false;
+    if (el) el.focus();
+    return false;
+  }
+
+  function validate() {
+    form.querySelectorAll(".invalid").forEach(function (el) { el.classList.remove("invalid"); });
+    var fields = [["#f-hotel", "호텔명을 입력해주세요."], ["#f-phone", "전화번호를 올바르게 입력해주세요."], ["#f-email", "이메일 주소를 올바르게 입력해주세요."]];
+    for (var i = 0; i < fields.length; i++) {
+      var el = form.querySelector(fields[i][0]);
+      el.value = el.value.trim();
+      if (!el.checkValidity()) { el.classList.add("invalid"); return fail(fields[i][1], el); }
+    }
+    if (!files.length) { drop.classList.add("invalid"); return fail("전년도 보험증권 파일을 첨부해주세요."); }
+    if (totalBytes() > MAX_BYTES) { drop.classList.add("invalid"); return fail("첨부파일 합계가 20MB를 초과합니다. 일부 파일을 빼시거나 kta7491@naver.com 으로 보내주세요."); }
+    var agree = form.elements.agree;
+    if (!agree.checked) { agree.parentNode.classList.add("invalid"); return fail("개인정보 수집·이용에 동의해주세요.", agree); }
+    errBox.hidden = true;
+    return true;
+  }
+
+  function readBase64(file) {
+    return new Promise(function (resolve, reject) {
+      var r = new FileReader();
+      r.onload = function () { resolve(String(r.result).split(",")[1]); };
+      r.onerror = reject;
+      r.readAsDataURL(file);
+    });
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!validate()) return;
+    if (!ENDPOINT) { fail("제출 서버가 아직 설정되지 않았습니다. 관리자에게 문의해주세요."); return; }
+    btn.disabled = true;
+    btn.textContent = "제출 중…";
+    Promise.all(files.map(function (f) {
+      return readBase64(f).then(function (data) {
+        return { name: f.name, type: f.type || "application/octet-stream", data: data };
+      });
+    })).then(function (payload) {
+      return fetch(ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({
+          hotel: form.elements.hotel.value,
+          manager: form.elements.manager.value.trim(),
+          phone: form.elements.phone.value,
+          email: form.elements.email.value,
+          agree: true,
+          files: payload
+        })
+      });
+    }).then(function (res) { return res.json(); }).then(function (json) {
+      if (!json.ok) throw new Error(json.error || "error");
+      form.hidden = true;
+      done.hidden = false;
+      done.scrollIntoView({ behavior: "smooth", block: "center" });
+    }).catch(function () {
+      fail("제출 중 오류가 발생했습니다. 잠시 후 다시 시도하시거나 kta7491@naver.com 으로 보내주세요.");
+      btn.disabled = false;
+      btn.textContent = "제출하기";
+    });
+  });
+</script>
+</body>
+</html>
